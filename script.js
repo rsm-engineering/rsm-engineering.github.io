@@ -330,6 +330,185 @@
     }
   }
 
+  /* ─── Pipeline MCP Connection SVG (3 connections) ─── */
+  var pipelineMcpSvg = document.getElementById("pipeline-mcp-svg");
+  if (pipelineMcpSvg) {
+    var svgNS3 = "http://www.w3.org/2000/svg";
+    var pipelineColors = ["#10B981", "#14B8A6", "#3B82F6"];
+    var pipelineLabels = ["PLP Postgres", "Client Code Postgres", "Best Practices"];
+    var numPipelineServers = 3;
+
+    var defs3 = document.createElementNS(svgNS3, "defs");
+    var filter3 = document.createElementNS(svgNS3, "filter");
+    filter3.setAttribute("id", "pipeline-mcp-glow");
+    filter3.setAttribute("x", "-100%");
+    filter3.setAttribute("y", "-100%");
+    filter3.setAttribute("width", "300%");
+    filter3.setAttribute("height", "300%");
+    var feBlur3 = document.createElementNS(svgNS3, "feGaussianBlur");
+    feBlur3.setAttribute("stdDeviation", "3");
+    feBlur3.setAttribute("result", "blur");
+    filter3.appendChild(feBlur3);
+    var feMerge3 = document.createElementNS(svgNS3, "feMerge");
+    var pfmn1 = document.createElementNS(svgNS3, "feMergeNode");
+    pfmn1.setAttribute("in", "blur");
+    feMerge3.appendChild(pfmn1);
+    var pfmn2 = document.createElementNS(svgNS3, "feMergeNode");
+    pfmn2.setAttribute("in", "SourceGraphic");
+    feMerge3.appendChild(pfmn2);
+    filter3.appendChild(feMerge3);
+    defs3.appendChild(filter3);
+    pipelineMcpSvg.appendChild(defs3);
+
+    for (var pi = 0; pi < numPipelineServers; pi++) {
+      var pStartX = 400;
+      var pEndX = (800 / (numPipelineServers + 1)) * (pi + 1);
+      var pMidY = 40;
+      var pPathD = "M" + pStartX + ",0 Q" + ((pStartX + pEndX) / 2) + "," + pMidY + " " + pEndX + ",80";
+      var pColor = pipelineColors[pi];
+
+      var pG = document.createElementNS(svgNS3, "g");
+
+      var pPath = document.createElementNS(svgNS3, "path");
+      pPath.setAttribute("d", pPathD);
+      pPath.setAttribute("stroke", pColor);
+      pPath.setAttribute("stroke-width", "1.5");
+      pPath.setAttribute("stroke-dasharray", "4 6");
+      pPath.setAttribute("stroke-opacity", "0.35");
+      pPath.setAttribute("fill", "none");
+      var pAnimDash = document.createElementNS(svgNS3, "animate");
+      pAnimDash.setAttribute("attributeName", "stroke-dashoffset");
+      pAnimDash.setAttribute("from", "0");
+      pAnimDash.setAttribute("to", "-20");
+      pAnimDash.setAttribute("dur", "2s");
+      pAnimDash.setAttribute("repeatCount", "indefinite");
+      pPath.appendChild(pAnimDash);
+      pG.appendChild(pPath);
+
+      var pCircle = document.createElementNS(svgNS3, "circle");
+      pCircle.setAttribute("r", "3");
+      pCircle.setAttribute("fill", pColor);
+      pCircle.setAttribute("filter", "url(#pipeline-mcp-glow)");
+      var pAnimMotion = document.createElementNS(svgNS3, "animateMotion");
+      pAnimMotion.setAttribute("dur", (2 + pi * 0.3) + "s");
+      pAnimMotion.setAttribute("repeatCount", "indefinite");
+      pAnimMotion.setAttribute("begin", (pi * 0.35) + "s");
+      pAnimMotion.setAttribute("path", pPathD);
+      pCircle.appendChild(pAnimMotion);
+      var pAnimOpacity = document.createElementNS(svgNS3, "animate");
+      pAnimOpacity.setAttribute("attributeName", "opacity");
+      pAnimOpacity.setAttribute("values", "0;0.9;0.9;0");
+      pAnimOpacity.setAttribute("dur", (2 + pi * 0.3) + "s");
+      pAnimOpacity.setAttribute("repeatCount", "indefinite");
+      pAnimOpacity.setAttribute("begin", (pi * 0.35) + "s");
+      pCircle.appendChild(pAnimOpacity);
+      pG.appendChild(pCircle);
+
+      pipelineMcpSvg.appendChild(pG);
+    }
+  }
+
+  /* ─── Decision Fork SVG ─── */
+  var forkSvg = document.getElementById("decision-fork-svg");
+  if (forkSvg) {
+    var svgNS4 = "http://www.w3.org/2000/svg";
+    var forkDefs = document.createElementNS(svgNS4, "defs");
+    var forkFilter = document.createElementNS(svgNS4, "filter");
+    forkFilter.setAttribute("id", "fork-glow");
+    forkFilter.setAttribute("x", "-100%");
+    forkFilter.setAttribute("y", "-100%");
+    forkFilter.setAttribute("width", "300%");
+    forkFilter.setAttribute("height", "300%");
+    var forkBlur = document.createElementNS(svgNS4, "feGaussianBlur");
+    forkBlur.setAttribute("stdDeviation", "3");
+    forkBlur.setAttribute("result", "blur");
+    forkFilter.appendChild(forkBlur);
+    var forkMerge = document.createElementNS(svgNS4, "feMerge");
+    var ffmn1 = document.createElementNS(svgNS4, "feMergeNode");
+    ffmn1.setAttribute("in", "blur");
+    forkMerge.appendChild(ffmn1);
+    var ffmn2 = document.createElementNS(svgNS4, "feMergeNode");
+    ffmn2.setAttribute("in", "SourceGraphic");
+    forkMerge.appendChild(ffmn2);
+    forkFilter.appendChild(forkMerge);
+    forkDefs.appendChild(forkFilter);
+    forkSvg.appendChild(forkDefs);
+
+    // Left branch (red - fail)
+    var leftPath = "M300,0 Q200,40 100,80";
+    var leftG = document.createElementNS(svgNS4, "g");
+    var leftLine = document.createElementNS(svgNS4, "path");
+    leftLine.setAttribute("d", leftPath);
+    leftLine.setAttribute("stroke", "#EF4444");
+    leftLine.setAttribute("stroke-width", "1.5");
+    leftLine.setAttribute("stroke-dasharray", "4 6");
+    leftLine.setAttribute("stroke-opacity", "0.4");
+    leftLine.setAttribute("fill", "none");
+    var leftAnimDash = document.createElementNS(svgNS4, "animate");
+    leftAnimDash.setAttribute("attributeName", "stroke-dashoffset");
+    leftAnimDash.setAttribute("from", "0");
+    leftAnimDash.setAttribute("to", "-20");
+    leftAnimDash.setAttribute("dur", "2s");
+    leftAnimDash.setAttribute("repeatCount", "indefinite");
+    leftLine.appendChild(leftAnimDash);
+    leftG.appendChild(leftLine);
+    var leftDot = document.createElementNS(svgNS4, "circle");
+    leftDot.setAttribute("r", "3");
+    leftDot.setAttribute("fill", "#EF4444");
+    leftDot.setAttribute("filter", "url(#fork-glow)");
+    var leftMotion = document.createElementNS(svgNS4, "animateMotion");
+    leftMotion.setAttribute("dur", "2.5s");
+    leftMotion.setAttribute("repeatCount", "indefinite");
+    leftMotion.setAttribute("path", leftPath);
+    leftDot.appendChild(leftMotion);
+    var leftOpacity = document.createElementNS(svgNS4, "animate");
+    leftOpacity.setAttribute("attributeName", "opacity");
+    leftOpacity.setAttribute("values", "0;0.9;0.9;0");
+    leftOpacity.setAttribute("dur", "2.5s");
+    leftOpacity.setAttribute("repeatCount", "indefinite");
+    leftDot.appendChild(leftOpacity);
+    leftG.appendChild(leftDot);
+    forkSvg.appendChild(leftG);
+
+    // Right branch (green - success)
+    var rightPath = "M300,0 Q400,40 500,80";
+    var rightG = document.createElementNS(svgNS4, "g");
+    var rightLine = document.createElementNS(svgNS4, "path");
+    rightLine.setAttribute("d", rightPath);
+    rightLine.setAttribute("stroke", "#10B981");
+    rightLine.setAttribute("stroke-width", "1.5");
+    rightLine.setAttribute("stroke-dasharray", "4 6");
+    rightLine.setAttribute("stroke-opacity", "0.4");
+    rightLine.setAttribute("fill", "none");
+    var rightAnimDash = document.createElementNS(svgNS4, "animate");
+    rightAnimDash.setAttribute("attributeName", "stroke-dashoffset");
+    rightAnimDash.setAttribute("from", "0");
+    rightAnimDash.setAttribute("to", "-20");
+    rightAnimDash.setAttribute("dur", "2s");
+    rightAnimDash.setAttribute("repeatCount", "indefinite");
+    rightLine.appendChild(rightAnimDash);
+    rightG.appendChild(rightLine);
+    var rightDot = document.createElementNS(svgNS4, "circle");
+    rightDot.setAttribute("r", "3");
+    rightDot.setAttribute("fill", "#10B981");
+    rightDot.setAttribute("filter", "url(#fork-glow)");
+    var rightMotion = document.createElementNS(svgNS4, "animateMotion");
+    rightMotion.setAttribute("dur", "2.5s");
+    rightMotion.setAttribute("repeatCount", "indefinite");
+    rightMotion.setAttribute("begin", "0.5s");
+    rightMotion.setAttribute("path", rightPath);
+    rightDot.appendChild(rightMotion);
+    var rightOpacity = document.createElementNS(svgNS4, "animate");
+    rightOpacity.setAttribute("attributeName", "opacity");
+    rightOpacity.setAttribute("values", "0;0.9;0.9;0");
+    rightOpacity.setAttribute("dur", "2.5s");
+    rightOpacity.setAttribute("repeatCount", "indefinite");
+    rightOpacity.setAttribute("begin", "0.5s");
+    rightDot.appendChild(rightOpacity);
+    rightG.appendChild(rightDot);
+    forkSvg.appendChild(rightG);
+  }
+
   /* ─── Node Icon Dynamic Styling ─── */
   document.querySelectorAll(".node-icon").forEach(function (node) {
     var color = node.dataset.color || "#3B82F6";
@@ -424,6 +603,19 @@
     });
     card.addEventListener("mouseleave", function () {
       card.style.filter = "none";
+    });
+  });
+
+  /* ─── Pipeline Stage Card Hover Effects ─── */
+  document.querySelectorAll(".pipeline-stage-card").forEach(function (card) {
+    var color = card.dataset.color || "#3B82F6";
+    card.addEventListener("mouseenter", function () {
+      card.style.boxShadow = "0 0 30px " + color + "20";
+      card.style.borderColor = color + "40";
+    });
+    card.addEventListener("mouseleave", function () {
+      card.style.boxShadow = "none";
+      card.style.borderColor = "rgba(255,255,255,0.08)";
     });
   });
 
