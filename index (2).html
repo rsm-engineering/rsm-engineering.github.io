@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAGE — Strategic Advisory &amp; Guidance Engine</title>
+  <meta name="description" content="A centralized AI-powered augmentation layer for D365 ERP implementation. One generic agent. 4,500+ curated best-practice prompts." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ═══ ANIMATED PARTICLE CANVAS ═══ -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="nav-logo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+        </div>
+        <span class="nav-title">SAGE</span>
+        <span class="nav-subtitle">Strategic Advisory &amp; Guidance Engine</span>
+      </div>
+      <div class="nav-links">
+        <a href="#architecture">Architecture</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#hub">Engagement Hub</a>
+        <div class="status-dot"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO SECTION ═══ -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://private-us-east-1.manuscdn.com/sessionFile/0Z95ArQbgRJIkkgNCqoDjM/sandbox/r56PwFVTSNaBXJR5TKBhRk-img-1_1771515042000_na1fn_c2FnZS1oZXJvLWJn.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvMFo5NUFyUWJnUkpJa2tnTkNxb0RqTS9zYW5kYm94L3I1NlB3RlZUU05hQlhKUjVUS0JoUmstaW1nLTFfMTc3MTUxNTA0MjAwMF9uYTFmbl9jMkZuWlMxb1pYSnZMV0puLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=A6-2jHbpeWCrJGvsqfbCAhBtbLfly1lMxAZUbEsUQOaISXSGxT7uDB1z3G4WTmHP2JrSnEJ1kWIplM1koiWYsllLXjxHkm3qH5J0Bqgc2cWnEVj26ggcKq~xh6njGmhLtkMD34Lm3giroBhkBJ6Qg8ZJ7Gec~iQSa2LdUiS~JMdvQkE~OjAvmYWciV92XlWgQ-~22vcUeK6WeAUd-PadGqsZMHWqKPYmI17qjD-iz6yYNnWSVzbZm-rzP8gy1aqghBY8cn4OgT1Oxzwff6ti6FnA~lmEiGlE0Gz-N7Uv~pLZ7iAUULnrLVfcTPehx~gJ~IU9xsUtqXJjn8JAmOeM2Q__" alt="" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content anim-fade-up">
+      <div class="badge">
+        <div class="badge-dot"></div>
+        <span>RSM AGENTIC TRANSFORMATION</span>
+      </div>
+      <h1 class="hero-title">SAGE</h1>
+      <p class="hero-subtitle">Strategic Advisory &amp; Guidance Engine</p>
+      <p class="hero-desc">A centralized AI-powered augmentation layer for D365 ERP implementation. One generic agent. 4,500+ curated best-practice prompts. Mapped to RBM Velocity actions. Your day-to-day does not change — SAGE makes it faster and more accurate.</p>
+      <div class="hero-badges">
+        <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8Z"/><circle cx="12" cy="10" r="3"/></svg> One Generic Agent</div>
+        <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg> 4,500+ Best Practices</div>
+        <div class="hero-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg> Human-in-the-Loop</div>
+      </div>
+      <div class="scroll-indicator">
+        <span>SCROLL TO EXPLORE</span>
+        <svg class="bounce" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ THE STRATEGIC PIVOT ═══ -->
+  <section class="section reveal">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label" style="color:#8B5CF6">THE STRATEGIC PIVOT</span>
+        <h2>From 85 Bespoke Agents to <span class="gradient-text-blue-violet">One Platform</span></h2>
+        <p class="section-desc">The rapid evolution of AI tools — particularly Claude's co-work capabilities and Azure D365 MCP — rendered the multi-agent approach unnecessarily complex. SAGE replaces 85 specialized agents with one centralized, curated intelligence layer.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-value" data-target="4500" data-suffix="+" style="color:#3B82F6">0+</div>
+          <div class="stat-label">Best-Practice Decisions</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-value" data-target="85" data-suffix="" style="color:#8B5CF6">0</div>
+          <div class="stat-label">Agents → 1 Platform</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-value" data-target="100000" data-suffix="+" style="color:#14B8A6">0+</div>
+          <div class="stat-label">X++ Objects Vectorized</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-value" data-target="5" data-suffix="" style="color:#F59E0B">0</div>
+          <div class="stat-label">Iteration Cap per Action</div>
+        </div>
+      </div>
+      <div class="cards-grid-3">
+        <div class="glow-card reveal" data-glow="#3B82F6">
+          <div class="glass">
+            <div class="card-header">
+              <div class="card-icon" style="background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+              <h3>Not a Replacement</h3>
+            </div>
+            <p>SAGE is an augmentation layer. Associates continue using Azure DevOps for all tasks, decisions, and action items. SAGE reads from DevOps and provides AI-powered assistance.</p>
+          </div>
+        </div>
+        <div class="glow-card reveal" data-glow="#8B5CF6">
+          <div class="glass">
+            <div class="card-header">
+              <div class="card-icon" style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg></div>
+              <h3>Curated Guardrails</h3>
+            </div>
+            <p>Each prompt has defined input requirements and expected outputs. Constrained prompts mapped to RBM Velocity actions prevent hallucination and ensure consistency.</p>
+          </div>
+        </div>
+        <div class="glow-card reveal" data-glow="#14B8A6">
+          <div class="glass">
+            <div class="card-header">
+              <div class="card-icon" style="background:rgba(20,184,166,0.1);border-color:rgba(20,184,166,0.2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <h3>Mistake Prevention</h3>
+            </div>
+            <p>The value is in preventing mistakes. "How much is a mistake worth to you? $200? Times that by 4,500." RSM's distilled methodology is the differentiator.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ARCHITECTURE STACK ═══ -->
+  <section id="architecture" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label" style="color:#3B82F6">THREE-LAYER ARCHITECTURE</span>
+        <h2>The SAGE <span class="gradient-text-multi">Platform Stack</span></h2>
+        <p class="section-desc">Five interconnected layers — from Azure DevOps at the foundation through Cosmos DB, the Microsoft Agent Framework, the API layer, and up to the chat interface within the Engagement Hub.</p>
+      </div>
+      <div class="architecture-stack">
+
+        <!-- Layer 5: Front-End -->
+        <div class="iso-layer reveal" style="transition-delay:0.1s">
+          <div class="layer-label"><div class="layer-dot" style="background:#3B82F6;box-shadow:0 0 10px rgba(59,130,246,0.5)"></div><span class="layer-name" style="color:rgba(59,130,246,0.8)">FRONT-END</span><span class="layer-sub">— Chat Interface within Engagement Hub</span></div>
+          <div class="layer-platform" style="border-color:rgba(59,130,246,0.35);box-shadow:0 0 40px rgba(59,130,246,0.15),inset 0 1px 0 rgba(255,255,255,0.05)">
+            <div class="grid-overlay"></div>
+            <div class="layer-content">
+              <div class="node-row">
+                <div class="node-icon" data-color="#3B82F6" data-pulse="true"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div></div><span>Chat UI</span></div>
+                <div class="node-icon" data-color="#3B82F6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div><span>Human-in-Loop</span></div>
+                <div class="node-icon" data-color="#3B82F6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg></div></div><span>Document Cards</span></div>
+                <div class="node-icon" data-color="#3B82F6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div></div><span>Task Cards</span></div>
+                <div class="node-icon" data-color="#3B82F6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div></div><span>User Context</span></div>
+              </div>
+              <div class="layer-note">Surfaced as a button within the Engagement Hub • Multi-tenant aware • MSAL authenticated</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#3B82F6"></div>
+
+        <!-- Layer 4: API Layer -->
+        <div class="iso-layer reveal" style="transition-delay:0.2s">
+          <div class="layer-label"><div class="layer-dot" style="background:#8B5CF6;box-shadow:0 0 10px rgba(139,92,246,0.5)"></div><span class="layer-name" style="color:rgba(139,92,246,0.8)">API LAYER</span><span class="layer-sub">— Session Management &amp; Telemetry</span></div>
+          <div class="layer-platform" style="border-color:rgba(139,92,246,0.35);box-shadow:0 0 40px rgba(139,92,246,0.15),inset 0 1px 0 rgba(255,255,255,0.05)">
+            <div class="grid-overlay"></div>
+            <div class="layer-content">
+              <div class="node-row">
+                <div class="node-icon" data-color="#8B5CF6" data-pulse="true"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg></div></div><span>API Gateway</span></div>
+                <div class="node-icon" data-color="#8B5CF6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg></div></div><span>MSAL Auth</span></div>
+                <div class="node-icon" data-color="#8B5CF6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div></div><span>Session Mgmt</span></div>
+                <div class="node-icon" data-color="#8B5CF6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div></div><span>Telemetry</span></div>
+              </div>
+              <div class="layer-note">User-level authentication • Per-user/project sessions • Token tracking • Traceability logging</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#8B5CF6"></div>
+
+        <!-- Layer 3: Agent Framework -->
+        <div class="iso-layer reveal" style="transition-delay:0.3s">
+          <div class="layer-label"><div class="layer-dot" style="background:#14B8A6;box-shadow:0 0 10px rgba(20,184,166,0.5)"></div><span class="layer-name" style="color:rgba(20,184,166,0.8)">MICROSOFT AGENT FRAMEWORK</span><span class="layer-sub">— Orchestration Engine + MCP Servers</span></div>
+          <div class="layer-platform" style="border-color:rgba(20,184,166,0.35);box-shadow:0 0 40px rgba(20,184,166,0.15),inset 0 1px 0 rgba(255,255,255,0.05)">
+            <div class="grid-overlay"></div>
+            <div class="layer-content">
+              <div class="node-row">
+                <div class="node-icon" data-color="#14B8A6" data-pulse="true"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 6 8 12 8 12s8-6 8-12a8 8 0 0 0-8-8Z"/><circle cx="12" cy="10" r="3"/></svg></div></div><span>LLM Picker</span></div>
+                <div class="node-icon" data-color="#14B8A6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg></div></div><span>Agent SDK</span></div>
+                <div class="node-icon" data-color="#14B8A6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div></div><span>D365 MCP</span></div>
+                <div class="node-icon" data-color="#14B8A6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div></div><span>Learn MCP</span></div>
+                <div class="node-icon" data-color="#14B8A6"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div></div><span>RAG Engine</span></div>
+              </div>
+              <div class="layer-note">One generic agent • 4,500+ curated prompts • Best LLM picker • 5-iteration cap • Human approval gates</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#14B8A6"></div>
+
+        <!-- Layer 2: Data Layer -->
+        <div class="iso-layer reveal" style="transition-delay:0.4s">
+          <div class="layer-label"><div class="layer-dot" style="background:#F59E0B;box-shadow:0 0 10px rgba(245,158,11,0.5)"></div><span class="layer-name" style="color:rgba(245,158,11,0.8)">DATA LAYER</span><span class="layer-sub">— Cosmos DB + Vector Stores</span></div>
+          <div class="layer-platform" style="border-color:rgba(245,158,11,0.35);box-shadow:0 0 40px rgba(245,158,11,0.15),inset 0 1px 0 rgba(255,255,255,0.05)">
+            <div class="grid-overlay"></div>
+            <div class="layer-content">
+              <div class="node-row">
+                <div class="node-icon" data-color="#F59E0B" data-pulse="true"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></div></div><span>Cosmos DB</span></div>
+                <div class="node-icon" data-color="#F59E0B"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div></div><span>Vector Search</span></div>
+                <div class="node-icon" data-color="#F59E0B"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" x2="6.01" y1="16" y2="16"/><line x1="10" x2="10.01" y1="16" y2="16"/></svg></div></div><span>Base Vectors</span></div>
+                <div class="node-icon" data-color="#F59E0B"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" x2="6.01" y1="16" y2="16"/><line x1="10" x2="10.01" y1="16" y2="16"/></svg></div></div><span>Client Vectors</span></div>
+                <div class="node-icon" data-color="#F59E0B"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div></div><span>Delta Sync</span></div>
+              </div>
+              <div class="layer-note">All DevOps work items synced • Delta sync on login • Two vector stores (base + client) • 100K+ X++ objects</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#F59E0B"></div>
+
+        <!-- Layer 1: Source of Truth -->
+        <div class="iso-layer reveal" style="transition-delay:0.5s">
+          <div class="layer-label"><div class="layer-dot" style="background:#EF4444;box-shadow:0 0 10px rgba(239,68,68,0.5)"></div><span class="layer-name" style="color:rgba(239,68,68,0.8)">SOURCE OF TRUTH</span><span class="layer-sub">— Azure DevOps</span></div>
+          <div class="layer-platform" style="border-color:rgba(239,68,68,0.3);box-shadow:0 0 40px rgba(239,68,68,0.12),inset 0 1px 0 rgba(255,255,255,0.05)">
+            <div class="grid-overlay"></div>
+            <div class="layer-content">
+              <div class="node-row">
+                <div class="node-icon" data-color="#EF4444" data-pulse="true"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div></div><span>DevOps</span></div>
+                <div class="node-icon" data-color="#EF4444"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg></div></div><span>Work Items</span></div>
+                <div class="node-icon" data-color="#EF4444"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div><span>Discussions</span></div>
+                <div class="node-icon" data-color="#EF4444"><div class="node-outer"><div class="node-inner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div></div><span>Attachments</span></div>
+              </div>
+              <div class="layer-note">Single source of truth • Associates' day-to-day unchanged • SAGE reads from &amp; acts upon DevOps data</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Background glow effects -->
+      <div class="arch-glow arch-glow-1"></div>
+      <div class="arch-glow arch-glow-2"></div>
+      <div class="arch-glow arch-glow-3"></div>
+    </div>
+  </section>
+
+  <!-- ═══ WORKFLOW — 4 Steps ═══ -->
+  <section id="workflow" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label" style="color:#14B8A6">STANDARDIZED PROCESS</span>
+        <h2>Every SAGE Action Follows <span class="gradient-text-teal-blue">Four Steps</span></h2>
+        <p class="section-desc">A standardized system prompt ensures consistency, traceability, and quality across every interaction. The human always approves the final MCP call.</p>
+      </div>
+      <div class="workflow-image reveal">
+        <img src="https://private-us-east-1.manuscdn.com/sessionFile/0Z95ArQbgRJIkkgNCqoDjM/sandbox/r56PwFVTSNaBXJR5TKBhRk-img-5_1771515052000_na1fn_c2FnZS13b3JrZmxvdy1wcm9jZXNz.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvMFo5NUFyUWJnUkpJa2tnTkNxb0RqTS9zYW5kYm94L3I1NlB3RlZUU05hQlhKUjVUS0JoUmstaW1nLTVfMTc3MTUxNTA1MjAwMF9uYTFmbl9jMkZuWlMxM2IzSnJabXh2ZHkxd2NtOWpaWE56LnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=esel7uspIul-rQI60aJsx8lHp4NqEwZtaDiBE9gf-G0ANJm8kn-IEGyqcw1Yk5~eof6Uq0oBunpSuJyZHUE2EkpipXtpah0nR2A03RcsbYE9yJMPHc7iEyjUW3FzlIaNrbWDtnatCuN32Axn6vuL5~mV83e~BHVcLq3QO~hvBih0H9qQrPjNAT98GiCIF13DygGgVXijwSbD1nRkqMdDX1bh4sFMrsBrM-T5~GqikGLaL4Rbubz8Ll0xDtNYafvfysABuWpOWJByNCanIbFXP3xagsds20b9zOY7bXrlAySquQ-AA3rt83V6Mz2PHHfnTyMaWxH55StITWucaYiSIQ__" alt="SAGE Workflow Process" />
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal" data-color="#14B8A6">
+          <div class="step-top">
+            <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(20,184,166,0.15),rgba(20,184,166,0.05));border-color:rgba(20,184,166,0.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></div>
+            <div class="step-body"><span class="step-num" style="color:#14B8A6">STEP 01</span><h3>Pull Metadata</h3><p>Retrieve work item context from DevOps/Cosmos DB — title, discussions, metadata, and full project history.</p></div>
+          </div>
+          <div class="step-flow"><div class="step-flow-line"></div><svg width="60" height="8" viewBox="0 0 60 8"><circle r="2" fill="#14B8A6" opacity="0.6"><animateMotion dur="2s" repeatCount="indefinite" path="M0,4 L60,4"/></circle><line x1="0" y1="4" x2="60" y2="4" stroke="#14B8A6" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="3 3"><animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1s" repeatCount="indefinite"/></line></svg><div class="step-flow-line"></div></div>
+        </div>
+        <div class="step-card reveal" data-color="#3B82F6">
+          <div class="step-top">
+            <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(59,130,246,0.05));border-color:rgba(59,130,246,0.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+            <div class="step-body"><span class="step-num" style="color:#3B82F6">STEP 02</span><h3>Reference Best Practices</h3><p>Query Microsoft Learn via MCP for the specific action's best practices, patterns, and documentation.</p></div>
+          </div>
+          <div class="step-flow"><div class="step-flow-line"></div><svg width="60" height="8" viewBox="0 0 60 8"><circle r="2" fill="#3B82F6" opacity="0.6"><animateMotion dur="2s" repeatCount="indefinite" path="M0,4 L60,4"/></circle><line x1="0" y1="4" x2="60" y2="4" stroke="#3B82F6" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="3 3"><animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1s" repeatCount="indefinite"/></line></svg><div class="step-flow-line"></div></div>
+        </div>
+        <div class="step-card reveal" data-color="#8B5CF6">
+          <div class="step-top">
+            <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(139,92,246,0.05));border-color:rgba(139,92,246,0.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></div>
+            <div class="step-body"><span class="step-num" style="color:#8B5CF6">STEP 03</span><h3>Clarify Context</h3><p>Ask three targeted clarifying questions using RAG against the full Cosmos DB project database.</p></div>
+          </div>
+          <div class="step-flow"><div class="step-flow-line"></div><svg width="60" height="8" viewBox="0 0 60 8"><circle r="2" fill="#8B5CF6" opacity="0.6"><animateMotion dur="2s" repeatCount="indefinite" path="M0,4 L60,4"/></circle><line x1="0" y1="4" x2="60" y2="4" stroke="#8B5CF6" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="3 3"><animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1s" repeatCount="indefinite"/></line></svg><div class="step-flow-line"></div></div>
+        </div>
+        <div class="step-card reveal" data-color="#F59E0B">
+          <div class="step-top">
+            <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(245,158,11,0.05));border-color:rgba(245,158,11,0.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <div class="step-body"><span class="step-num" style="color:#F59E0B">STEP 04</span><h3>Execute Action</h3><p>Combine best practices with the specific action, present options to the user, and execute upon approval via MCP.</p></div>
+          </div>
+          <div class="step-flow"><div class="step-flow-line"></div><svg width="60" height="8" viewBox="0 0 60 8"><circle r="2" fill="#F59E0B" opacity="0.6"><animateMotion dur="2s" repeatCount="indefinite" path="M0,4 L60,4"/></circle><line x1="0" y1="4" x2="60" y2="4" stroke="#F59E0B" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="3 3"><animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1s" repeatCount="indefinite"/></line></svg><div class="step-flow-line"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MCP ECOSYSTEM ═══ -->
+  <section id="ecosystem" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label" style="color:#F59E0B">MCP ECOSYSTEM</span>
+        <h2>Connected <span class="gradient-text-amber-red">MCP Servers &amp; Tools</span></h2>
+        <p class="section-desc">SAGE orchestrates across multiple Model Context Protocol servers — from D365 code generation to Microsoft Learn best practices, DevOps sync, and specialized tools.</p>
+      </div>
+      <div class="agent-image reveal">
+        <img src="https://private-us-east-1.manuscdn.com/sessionFile/0Z95ArQbgRJIkkgNCqoDjM/sandbox/r56PwFVTSNaBXJR5TKBhRk-img-4_1771515055000_na1fn_c2FnZS1hZ2VudC1sYXllcg.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvMFo5NUFyUWJnUkpJa2tnTkNxb0RqTS9zYW5kYm94L3I1NlB3RlZUU05hQlhKUjVUS0JoUmstaW1nLTRfMTc3MTUxNTA1NTAwMF9uYTFmbl9jMkZuWlMxaFoyVnVkQzFzWVhsbGNnLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=jL2Oj0IX1ate-nJ~r3dMSSeDy9FowqHKVuPxhVGzBDRxc7EEprnfgTr7OAtBBwBmQN4mMS5WauHLF4fl~wycncs1lK8f5qij3pnnwMpYBx~WWQf~aePy~EEsQ4ETlLTVMj48evQSu2j-Uopm-Bc-zyh91EFnPDqLwPemsRtrUqyPuSqoJxhMszSFfMA2B5lpWwH51DrRJ~asExCKONRLjAtvJ6ncYM5qU2OkuDb3rxMXwlswowkhgbjAoqOarnb7s8E1I3HRbn7mBeS6MpYKl6UiDkUIkIUlJa4FJFYxbV~aLZtK5OO1O4JcidmQMCA03oQLKxOa7muRAe9dk37sOw__" alt="SAGE Agent Layer" />
+      </div>
+      <!-- Central SAGE node -->
+      <div class="mcp-center reveal">
+        <div class="mcp-pulse"></div>
+        <div class="mcp-node">SAGE</div>
+      </div>
+      <!-- Connection SVG -->
+      <div class="mcp-connections">
+        <svg width="100%" height="80" viewBox="0 0 800 80" preserveAspectRatio="xMidYMid meet" id="mcp-svg"></svg>
+      </div>
+      <!-- MCP Cards -->
+      <div class="mcp-grid">
+        <div class="mcp-card reveal" data-color="#3B82F6">
+          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4>D365 MCP</h4></div>
+          <p>X++ code generation, item_get/item_set, build triggers, form &amp; table modifications</p>
+          <div class="mcp-status"><div class="mcp-status-dot" style="background:#3B82F6"></div><span style="color:rgba(59,130,246,0.5)">CONNECTED</span></div>
+        </div>
+        <div class="mcp-card reveal" data-color="#8B5CF6">
+          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h4>Microsoft Learn MCP</h4></div>
+          <p>Best practices retrieval, documentation search, pattern matching for D365 actions</p>
+          <div class="mcp-status"><div class="mcp-status-dot" style="background:#8B5CF6"></div><span style="color:rgba(139,92,246,0.5)">CONNECTED</span></div>
+        </div>
+        <div class="mcp-card reveal" data-color="#14B8A6">
+          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(20,184,166,0.15);border-color:rgba(20,184,166,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div><h4>Azure DevOps MCP</h4></div>
+          <p>Work item sync, task management, discussion threads, attachment handling</p>
+          <div class="mcp-status"><div class="mcp-status-dot" style="background:#14B8A6"></div><span style="color:rgba(20,184,166,0.5)">CONNECTED</span></div>
+        </div>
+        <div class="mcp-card reveal" data-color="#F59E0B">
+          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(245,158,11,0.15);border-color:rgba(245,158,11,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div><h4>Cosmos DB</h4></div>
+          <p>High-performance data store, vector search, RAG queries, delta sync engine</p>
+          <div class="mcp-status"><div class="mcp-status-dot" style="background:#F59E0B"></div><span style="color:rgba(245,158,11,0.5)">CONNECTED</span></div>
+        </div>
+        <div class="mcp-card reveal" data-color="#EF4444">
+          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h4>DataBridge</h4></div>
+          <p>Data migration mapping, source-to-D365 field mapping, scoring &amp; validation</p>
+          <div class="mcp-status"><div class="mcp-status-dot" style="background:#EF4444"></div><span style="color:rgba(239,68,68,0.5)">CONNECTED</span></div>
+        </div>
+        <div class="mcp-card reveal" data-color="#10B981">
+          <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg></div><h4>Document Generator</h4></div>
+          <p>BRDs, SOW reconciliation, technical requirements documents from project data</p>
+          <div class="mcp-status"><div class="mcp-status-dot" style="background:#10B981"></div><span style="color:rgba(16,185,129,0.5)">CONNECTED</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ENGAGEMENT HUB ═══ -->
+  <section id="hub" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label" style="color:#8B5CF6">PLATFORM CONTEXT</span>
+        <h2>Engagement Hub <span class="gradient-text-violet-blue">+ SAGE</span></h2>
+        <p class="section-desc">The Engagement Hub handles mobilization and solution design. SAGE activates during implementation — integrated as a button that inherits all project context automatically.</p>
+      </div>
+      <!-- Phase timeline -->
+      <div class="phase-timeline reveal">
+        <h3 class="phase-title">RBM Velocity Project Lifecycle</h3>
+        <div class="phase-row">
+          <div class="phase-item"><div class="phase-tool">Engagement Hub</div><div class="phase-name">Mobilization</div></div>
+          <div class="phase-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+          <div class="phase-item"><div class="phase-tool">Engagement Hub</div><div class="phase-name">Solution Design</div></div>
+          <div class="phase-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+          <div class="phase-item phase-active"><div class="phase-tool">SAGE</div><div class="phase-name active-name">Implementation</div></div>
+          <div class="phase-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+          <div class="phase-item"><div class="phase-tool">Playwright + Jenkins</div><div class="phase-name">Deployment</div></div>
+          <div class="phase-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+          <div class="phase-item"><div class="phase-tool">Monitoring</div><div class="phase-name">Go-Live</div></div>
+        </div>
+      </div>
+      <!-- Hub tools -->
+      <div class="hub-header reveal">
+        <div class="hub-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></div>
+        <div><h3>Engagement Hub</h3><p>Mobilization &amp; Solution Design Platform</p></div>
+      </div>
+      <div class="hub-grid">
+        <div class="hub-card reveal" data-color="#3B82F6"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></div><span>BSG Management</span><p>Granular process-level configuration, in-scope/out-of-scope scenarios</p></div>
+        <div class="hub-card reveal" data-color="#8B5CF6"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg></div><span>Meeting Templates</span><p>Pre-built schedules for each implementation phase, calendar export</p></div>
+        <div class="hub-card reveal" data-color="#14B8A6"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><span>Meeting Summarizer</span><p>AI-powered transcript processing → summaries, action items, requirements</p></div>
+        <div class="hub-card reveal" data-color="#F59E0B"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><path d="M11 18H8a2 2 0 0 1-2-2V9"/></svg></div><span>Process Flow Viz</span><p>Mermaid-based business process diagrams with Axiom integration</p></div>
+        <div class="hub-card reveal" data-color="#EF4444"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></div><span>Requirements Tracking</span><p>Manage requirements and their in/out-of-scope status across phases</p></div>
+        <div class="hub-card reveal" data-color="#10B981"><div class="hub-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><span>DataBridge</span><p>Data migration mapping — source system to D365 field-level mapping with scoring</p></div>
+      </div>
+      <!-- Integration callout -->
+      <div class="integration-callout reveal">
+        <div class="shimmer-bg"></div>
+        <div class="callout-inner">
+          <div class="callout-text">
+            <h4>SAGE lives inside the Engagement Hub</h4>
+            <p>Integrated as a button within the Engagement Hub, SAGE automatically inherits the customer, tenant, and environment context. This creates a seamless transition from the design phase to implementation — no re-authentication, no context switching.</p>
+          </div>
+          <div class="callout-badges">
+            <div class="callout-badge violet">Engagement Hub</div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <div class="callout-badge blue">SAGE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KEY DECISIONS ═══ -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label" style="color:#EF4444">ARCHITECTURAL DECISIONS</span>
+        <h2>Key <span class="gradient-text-red-amber">Decisions Made</span></h2>
+      </div>
+      <div class="decisions-grid">
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><div><h4>Abandon 80+ bespoke agents</h4><p>Build SAGE as a centralized, generic agent front-end with curated prompts mapped to RBM Velocity actions.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><div><h4>DevOps remains source of truth</h4><p>Associates' day-to-day workflows do not change. SAGE reads from and acts upon DevOps data.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#14B8A6;box-shadow:0 0 8px #14B8A6"></div><div><h4>Cosmos DB over direct DevOps API</h4><p>All work items synced to Cosmos DB for performance. Delta sync on every user login.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#F59E0B;box-shadow:0 0 8px #F59E0B"></div><div><h4>SAGE as button in Engagement Hub</h4><p>Solves multi-tenant context issues and creates a clear project lifecycle transition.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#EF4444;box-shadow:0 0 8px #EF4444"></div><div><h4>User-level auth via MSAL</h4><p>Actions run under the user's account for accountability and traceability. No service accounts.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#10B981;box-shadow:0 0 8px #10B981"></div><div><h4>All actions logged for traceability</h4><p>Session logs stored as DevOps attachments. Every input and output flowing through SAGE is recorded.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><div><h4>Three parallel workstreams</h4><p>SAGE development (Saeed), Axiom hardening (Norik), Engagement Hub replication/enhancement.</p></div></div>
+        <div class="decision-card reveal"><div class="decision-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><div><h4>X++ code gen as separate workstream</h4><p>Dev activities may launch a separate MCP-driven experience. 100K+ objects need vectorization.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo small"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></div>
+        <span>SAGE</span>
+      </div>
+      <p>Strategic Advisory &amp; Guidance Engine — RSM Agentic Transformation</p>
+      <p class="footer-tech">Powered by Microsoft Agent Framework • Azure Cosmos DB • D365 MCP</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
