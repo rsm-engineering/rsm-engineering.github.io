@@ -445,6 +445,11 @@
 
         <div class="dataflow-svg" data-color="#10B981"></div>
 
+        <!-- Conditional stages note -->
+        <div class="pipeline-stage-card reveal" data-color="#F59E0B" style="max-width:640px;text-align:center;padding:1rem 1.5rem;margin-bottom:0.5rem">
+          <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(245,158,11,0.7);letter-spacing:0.05em">The agent determines which layers are needed based on the task — it may use one, two, or all three.</p>
+        </div>
+
         <!-- Stage 02: Data Schema & Modeling -->
         <div class="pipeline-stage reveal">
           <div class="pipeline-stage-label"><div class="stage-dot" style="background:#F59E0B;box-shadow:0 0 8px #F59E0B"></div><span style="color:rgba(245,158,11,0.7)">STAGE 02</span></div>
@@ -456,7 +461,7 @@
               <div class="step-body">
                 <span class="step-num" style="color:#F59E0B">DATA SCHEMA &amp; MODELING</span>
                 <h3>Agent Creates Data Dictionary</h3>
-                <p>Defines the database structure — Tables (fields, indexes, relations, labels), Views, Queries, Extended Data Types (EDTs), and Base Enums.</p>
+                <p>When the task requires data changes, the agent creates or modifies Tables (fields, indexes, relations, labels), Views, Queries, Extended Data Types (EDTs), and Base Enums.</p>
               </div>
             </div>
           </div>
@@ -475,7 +480,7 @@
               <div class="step-body">
                 <span class="step-num" style="color:#8B5CF6">BUSINESS LOGIC</span>
                 <h3>Agent Writes X++ Code</h3>
-                <p>Generates X++ classes, Chain of Command extensions, event handlers, number sequences, and business logic following D365 best practices.</p>
+                <p>When logic is needed, the agent writes X++ classes, Chain of Command extensions, event handlers, number sequences, and business logic following D365 best practices.</p>
               </div>
             </div>
           </div>
@@ -494,7 +499,7 @@
               <div class="step-body">
                 <span class="step-num" style="color:#3B82F6">UI COMPONENTS</span>
                 <h3>Agent Builds User Interface</h3>
-                <p>Creates Forms, Menu Items, Tiles, Workspace configurations, and Extensible Controls (HTML/JS/CSS) for custom UI elements.</p>
+                <p>When UI changes are required, the agent builds or modifies Forms, Menu Items, Tiles, Workspace configurations, and Extensible Controls (HTML/JS/CSS).</p>
               </div>
             </div>
           </div>
