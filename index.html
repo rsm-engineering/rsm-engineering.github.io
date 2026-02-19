@@ -445,71 +445,34 @@
 
         <div class="dataflow-svg" data-color="#10B981"></div>
 
-        <!-- Conditional stages note -->
-        <div class="pipeline-stage-card reveal" data-color="#F59E0B" style="max-width:640px;text-align:center;padding:1rem 1.5rem;margin-bottom:0.5rem">
-          <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(245,158,11,0.7);letter-spacing:0.05em">The agent determines which layers are needed based on the task — it may use one, two, or all three.</p>
-        </div>
-
-        <!-- Stage 02: Data Schema & Modeling -->
+        <!-- Stage 02: Agent Creates D365 F&O Artifacts -->
         <div class="pipeline-stage reveal">
           <div class="pipeline-stage-label"><div class="stage-dot" style="background:#F59E0B;box-shadow:0 0 8px #F59E0B"></div><span style="color:rgba(245,158,11,0.7)">STAGE 02</span></div>
           <div class="pipeline-stage-card" data-color="#F59E0B">
             <div class="step-top">
               <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(245,158,11,0.05));border-color:rgba(245,158,11,0.3)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
               </div>
               <div class="step-body">
-                <span class="step-num" style="color:#F59E0B">DATA SCHEMA &amp; MODELING</span>
-                <h3>Agent Creates Data Dictionary</h3>
-                <p>When the task requires data changes, the agent creates or modifies Tables (fields, indexes, relations, labels), Views, Queries, Extended Data Types (EDTs), and Base Enums.</p>
+                <span class="step-num" style="color:#F59E0B">D365 F&amp;O ARTIFACTS</span>
+                <h3>Agent Creates D365 F&amp;O Artifacts</h3>
+                <p>Based on the task, the agent determines which layers are needed and creates or modifies the appropriate artifacts:</p>
               </div>
+            </div>
+            <div class="dashboard-features" style="margin-top:1rem;gap:0.65rem">
+              <div class="dash-feat" style="font-size:0.8rem"><div class="dash-feat-dot" style="background:#F59E0B"></div><strong style="color:rgba(245,158,11,0.8);margin-right:0.35rem">Data Schema</strong> Tables, Views, Queries, EDTs, Base Enums</div>
+              <div class="dash-feat" style="font-size:0.8rem"><div class="dash-feat-dot" style="background:#8B5CF6"></div><strong style="color:rgba(139,92,246,0.8);margin-right:0.35rem">Business Logic</strong> X++ classes, CoC extensions, event handlers, number sequences</div>
+              <div class="dash-feat" style="font-size:0.8rem"><div class="dash-feat-dot" style="background:#3B82F6"></div><strong style="color:rgba(59,130,246,0.8);margin-right:0.35rem">UI Components</strong> Forms, Menu Items, Tiles, Workspaces, Extensible Controls</div>
+              <div class="dash-feat" style="font-size:0.8rem"><div class="dash-feat-dot" style="background:#14B8A6"></div><strong style="color:rgba(20,184,166,0.8);margin-right:0.35rem">Misc</strong> Security privileges/duties, configuration keys, labels, resources</div>
             </div>
           </div>
         </div>
 
         <div class="dataflow-svg" data-color="#F59E0B"></div>
 
-        <!-- Stage 03: Business Logic -->
+        <!-- Stage 03: Build on Azure VMs -->
         <div class="pipeline-stage reveal">
-          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><span style="color:rgba(139,92,246,0.7)">STAGE 03</span></div>
-          <div class="pipeline-stage-card" data-color="#8B5CF6">
-            <div class="step-top">
-              <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(139,92,246,0.05));border-color:rgba(139,92,246,0.3)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              </div>
-              <div class="step-body">
-                <span class="step-num" style="color:#8B5CF6">BUSINESS LOGIC</span>
-                <h3>Agent Writes X++ Code</h3>
-                <p>When logic is needed, the agent writes X++ classes, Chain of Command extensions, event handlers, number sequences, and business logic following D365 best practices.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dataflow-svg" data-color="#8B5CF6"></div>
-
-        <!-- Stage 04: UI Components -->
-        <div class="pipeline-stage reveal">
-          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><span style="color:rgba(59,130,246,0.7)">STAGE 04</span></div>
-          <div class="pipeline-stage-card" data-color="#3B82F6">
-            <div class="step-top">
-              <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(59,130,246,0.05));border-color:rgba(59,130,246,0.3)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
-              </div>
-              <div class="step-body">
-                <span class="step-num" style="color:#3B82F6">UI COMPONENTS</span>
-                <h3>Agent Builds User Interface</h3>
-                <p>When UI changes are required, the agent builds or modifies Forms, Menu Items, Tiles, Workspace configurations, and Extensible Controls (HTML/JS/CSS).</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dataflow-svg" data-color="#3B82F6"></div>
-
-        <!-- Stage 05: Build on Azure VMs -->
-        <div class="pipeline-stage reveal">
-          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#EF4444;box-shadow:0 0 8px #EF4444"></div><span style="color:rgba(239,68,68,0.7)">STAGE 05</span></div>
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#EF4444;box-shadow:0 0 8px #EF4444"></div><span style="color:rgba(239,68,68,0.7)">STAGE 03</span></div>
           <div class="pipeline-stage-card" data-color="#EF4444">
             <div class="step-top">
               <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(239,68,68,0.15),rgba(239,68,68,0.05));border-color:rgba(239,68,68,0.3)">
@@ -590,9 +553,9 @@
 
         <div class="dataflow-svg" data-color="#3B82F6"></div>
 
-        <!-- Stage 06: Push to Client Azure DevOps -->
+        <!-- Stage 04: Push to Client Azure DevOps -->
         <div class="pipeline-stage reveal">
-          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><span style="color:rgba(59,130,246,0.7)">STAGE 06</span></div>
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><span style="color:rgba(59,130,246,0.7)">STAGE 04</span></div>
           <div class="pipeline-stage-card" data-color="#3B82F6">
             <div class="step-top">
               <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(59,130,246,0.05));border-color:rgba(59,130,246,0.3)">
@@ -614,9 +577,9 @@
 
         <div class="dataflow-svg" data-color="#8B5CF6"></div>
 
-        <!-- Stage 07: Deploy to Client D365 -->
+        <!-- Stage 05: Deploy to Client D365 -->
         <div class="pipeline-stage reveal">
-          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><span style="color:rgba(139,92,246,0.7)">STAGE 07</span></div>
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><span style="color:rgba(139,92,246,0.7)">STAGE 05</span></div>
           <div class="pipeline-stage-card" data-color="#8B5CF6">
             <div class="step-top">
               <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(139,92,246,0.05));border-color:rgba(139,92,246,0.3)">
@@ -633,9 +596,9 @@
 
         <div class="dataflow-svg" data-color="#14B8A6"></div>
 
-        <!-- Stage 08: Update Client Code Postgres -->
+        <!-- Stage 06: Update Client Code Postgres -->
         <div class="pipeline-stage reveal">
-          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#14B8A6;box-shadow:0 0 8px #14B8A6"></div><span style="color:rgba(20,184,166,0.7)">STAGE 08</span></div>
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#14B8A6;box-shadow:0 0 8px #14B8A6"></div><span style="color:rgba(20,184,166,0.7)">STAGE 06</span></div>
           <div class="pipeline-stage-card" data-color="#14B8A6">
             <div class="step-top">
               <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(20,184,166,0.15),rgba(20,184,166,0.05));border-color:rgba(20,184,166,0.3)">
