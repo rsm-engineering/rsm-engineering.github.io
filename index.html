@@ -29,7 +29,7 @@
         <a href="#workflow">Workflow</a>
         <a href="#ecosystem">Ecosystem</a>
         <a href="#hub">Engagement Hub</a>
-        <a href="#xpp-pipeline">X++ Pipeline</a>
+        <a href="#xpp-pipeline">D365 F&amp;O Pipeline</a>
         <a href="#ps-tooling">PS Tooling</a>
         <div class="status-dot"></div>
       </div>
@@ -388,13 +388,13 @@
     </div>
   </section>
 
-  <!-- ═══ X++ AGENT DEVELOPMENT PIPELINE ═══ -->
+  <!-- ═══ D365 F&O AGENT DEVELOPMENT PIPELINE ═══ -->
   <section id="xpp-pipeline" class="section">
     <div class="section-inner">
       <div class="section-header reveal">
-        <span class="section-label" style="color:#10B981">X++ AGENT DEVELOPMENT PIPELINE</span>
-        <h2>Autonomous <span class="gradient-text-green-blue">X++ Code Pipeline</span></h2>
-        <p class="section-desc">An AI agent that autonomously writes X++ code for D365 F&amp;O, builds on Azure VMs with retry logic, and flows through GitHub and Azure DevOps — with human escalation when needed.</p>
+        <span class="section-label" style="color:#10B981">D365 F&amp;O AGENT DEVELOPMENT PIPELINE</span>
+        <h2>Autonomous <span class="gradient-text-green-blue">D365 F&amp;O Development Pipeline</span></h2>
+        <p class="section-desc">An AI agent that autonomously creates D365 Finance &amp; Operations artifacts — data schemas, business logic, and UI components — builds on Azure VMs with retry logic, and flows through GitHub and Azure DevOps.</p>
       </div>
 
       <div class="pipeline-flow">
@@ -410,7 +410,7 @@
               <div class="step-body">
                 <span class="step-num" style="color:#10B981">AGENT CONTEXT</span>
                 <h3>Agent Gathers Context via MCP</h3>
-                <p>The agent queries three MCP data sources to build a complete picture before writing any code.</p>
+                <p>The agent queries three MCP data sources to build a complete picture before creating any D365 artifacts.</p>
               </div>
             </div>
             <!-- MCP Source Cards -->
@@ -430,12 +430,12 @@
                 </div>
                 <div class="mcp-card reveal" data-color="#14B8A6">
                   <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(20,184,166,0.15);border-color:rgba(20,184,166,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></div><h4>Client Code Postgres</h4></div>
-                  <p>Existing client X++ codebase — models, extensions, and custom objects</p>
+                  <p>Existing client D365 codebase — tables, classes, forms, extensions, and custom objects</p>
                   <div class="mcp-status"><div class="mcp-status-dot" style="background:#14B8A6"></div><span style="color:rgba(20,184,166,0.5)">CONNECTED</span></div>
                 </div>
                 <div class="mcp-card reveal" data-color="#3B82F6">
                   <div class="mcp-card-head"><div class="mcp-card-icon" style="background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h4>Best Practices</h4></div>
-                  <p>Microsoft Learn docs, X++ coding standards, and D365 extension patterns</p>
+                  <p>Microsoft Learn docs, D365 coding standards, and extension patterns</p>
                   <div class="mcp-status"><div class="mcp-status-dot" style="background:#3B82F6"></div><span style="color:rgba(59,130,246,0.5)">CONNECTED</span></div>
                 </div>
               </div>
@@ -445,18 +445,18 @@
 
         <div class="dataflow-svg" data-color="#10B981"></div>
 
-        <!-- Stage 02: Agent Writes X++ -->
+        <!-- Stage 02: Data Schema & Modeling -->
         <div class="pipeline-stage reveal">
           <div class="pipeline-stage-label"><div class="stage-dot" style="background:#F59E0B;box-shadow:0 0 8px #F59E0B"></div><span style="color:rgba(245,158,11,0.7)">STAGE 02</span></div>
           <div class="pipeline-stage-card" data-color="#F59E0B">
             <div class="step-top">
               <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(245,158,11,0.05));border-color:rgba(245,158,11,0.3)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
               </div>
               <div class="step-body">
-                <span class="step-num" style="color:#F59E0B">CODE GENERATION</span>
-                <h3>Agent Writes X++ Code</h3>
-                <p>Using gathered context, the agent generates X++ classes, tables, forms, and extensions following D365 best practices and coding standards.</p>
+                <span class="step-num" style="color:#F59E0B">DATA SCHEMA &amp; MODELING</span>
+                <h3>Agent Creates Data Dictionary</h3>
+                <p>Defines the database structure — Tables (fields, indexes, relations, labels), Views, Queries, Extended Data Types (EDTs), and Base Enums.</p>
               </div>
             </div>
           </div>
@@ -464,9 +464,47 @@
 
         <div class="dataflow-svg" data-color="#F59E0B"></div>
 
-        <!-- Stage 03: Build on Azure VMs -->
+        <!-- Stage 03: Business Logic -->
         <div class="pipeline-stage reveal">
-          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#EF4444;box-shadow:0 0 8px #EF4444"></div><span style="color:rgba(239,68,68,0.7)">STAGE 03</span></div>
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><span style="color:rgba(139,92,246,0.7)">STAGE 03</span></div>
+          <div class="pipeline-stage-card" data-color="#8B5CF6">
+            <div class="step-top">
+              <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(139,92,246,0.05));border-color:rgba(139,92,246,0.3)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <div class="step-body">
+                <span class="step-num" style="color:#8B5CF6">BUSINESS LOGIC</span>
+                <h3>Agent Writes X++ Code</h3>
+                <p>Generates X++ classes, Chain of Command extensions, event handlers, number sequences, and business logic following D365 best practices.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#8B5CF6"></div>
+
+        <!-- Stage 04: UI Components -->
+        <div class="pipeline-stage reveal">
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><span style="color:rgba(59,130,246,0.7)">STAGE 04</span></div>
+          <div class="pipeline-stage-card" data-color="#3B82F6">
+            <div class="step-top">
+              <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(59,130,246,0.05));border-color:rgba(59,130,246,0.3)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+              </div>
+              <div class="step-body">
+                <span class="step-num" style="color:#3B82F6">UI COMPONENTS</span>
+                <h3>Agent Builds User Interface</h3>
+                <p>Creates Forms, Menu Items, Tiles, Workspace configurations, and Extensible Controls (HTML/JS/CSS) for custom UI elements.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dataflow-svg" data-color="#3B82F6"></div>
+
+        <!-- Stage 05: Build on Azure VMs -->
+        <div class="pipeline-stage reveal">
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#EF4444;box-shadow:0 0 8px #EF4444"></div><span style="color:rgba(239,68,68,0.7)">STAGE 05</span></div>
           <div class="pipeline-stage-card" data-color="#EF4444">
             <div class="step-top">
               <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(239,68,68,0.15),rgba(239,68,68,0.05));border-color:rgba(239,68,68,0.3)">
@@ -547,9 +585,9 @@
 
         <div class="dataflow-svg" data-color="#3B82F6"></div>
 
-        <!-- Stage 05: Push to Client Azure DevOps -->
+        <!-- Stage 06: Push to Client Azure DevOps -->
         <div class="pipeline-stage reveal">
-          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><span style="color:rgba(59,130,246,0.7)">STAGE 05</span></div>
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#3B82F6;box-shadow:0 0 8px #3B82F6"></div><span style="color:rgba(59,130,246,0.7)">STAGE 06</span></div>
           <div class="pipeline-stage-card" data-color="#3B82F6">
             <div class="step-top">
               <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(59,130,246,0.05));border-color:rgba(59,130,246,0.3)">
@@ -571,9 +609,9 @@
 
         <div class="dataflow-svg" data-color="#8B5CF6"></div>
 
-        <!-- Stage 06: Deploy to Client D365 -->
+        <!-- Stage 07: Deploy to Client D365 -->
         <div class="pipeline-stage reveal">
-          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><span style="color:rgba(139,92,246,0.7)">STAGE 06</span></div>
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#8B5CF6;box-shadow:0 0 8px #8B5CF6"></div><span style="color:rgba(139,92,246,0.7)">STAGE 07</span></div>
           <div class="pipeline-stage-card" data-color="#8B5CF6">
             <div class="step-top">
               <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(139,92,246,0.05));border-color:rgba(139,92,246,0.3)">
@@ -590,9 +628,9 @@
 
         <div class="dataflow-svg" data-color="#14B8A6"></div>
 
-        <!-- Stage 07: Update Client Code Postgres -->
+        <!-- Stage 08: Update Client Code Postgres -->
         <div class="pipeline-stage reveal">
-          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#14B8A6;box-shadow:0 0 8px #14B8A6"></div><span style="color:rgba(20,184,166,0.7)">STAGE 07</span></div>
+          <div class="pipeline-stage-label"><div class="stage-dot" style="background:#14B8A6;box-shadow:0 0 8px #14B8A6"></div><span style="color:rgba(20,184,166,0.7)">STAGE 08</span></div>
           <div class="pipeline-stage-card" data-color="#14B8A6">
             <div class="step-top">
               <div class="step-icon-wrap" style="background:linear-gradient(135deg,rgba(20,184,166,0.15),rgba(20,184,166,0.05));border-color:rgba(20,184,166,0.3)">
