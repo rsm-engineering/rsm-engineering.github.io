@@ -4,13 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SAGE — Strategic Advisory &amp; Guidance Engine</title>
+  <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="A centralized AI-powered augmentation layer for D365 ERP implementation. One generic agent. 4,500+ curated best-practice prompts." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://alcdn.msauth.net/browser/2.38.0/js/msal-browser.min.js"></script>
 </head>
 <body>
+  <!-- ═══ AUTH-GATED CONTENT (hidden until login) ═══ -->
+  <div id="app-content" style="display:none">
   <!-- ═══ ANIMATED PARTICLE CANVAS ═══ -->
   <canvas id="particle-canvas"></canvas>
 
@@ -704,6 +708,44 @@
     </div>
   </footer>
 
+  </div><!-- /app-content -->
+
+  <!-- ═══ MSAL AUTHENTICATION ═══ -->
+  <script>
+    const msalConfig = {
+      auth: {
+        clientId: "98e10bd4-9102-4dbf-abde-31f664aed685",
+        authority: "https://login.microsoftonline.com/6e3824e5-c612-4b74-9a24-a9b1aa2c26d7",
+        redirectUri: window.location.origin + window.location.pathname,
+      }
+    };
+
+    const msalInstance = new msal.PublicClientApplication(msalConfig);
+
+    async function handleAuth() {
+      const response = await msalInstance.handleRedirectPromise();
+      if (response) {
+        showContent(response.account);
+      } else {
+        const accounts = msalInstance.getAllAccounts();
+        if (accounts.length > 0) {
+          showContent(accounts[0]);
+        } else {
+          msalInstance.loginRedirect({ scopes: ["User.Read"] });
+        }
+      }
+    }
+
+    function showContent(account) {
+      document.getElementById("app-content").style.display = "block";
+    }
+
+    function signOut() {
+      msalInstance.logoutRedirect();
+    }
+
+    handleAuth();
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
