@@ -755,7 +755,7 @@
     }
 
     function showContent(account) {
-      var allowedDomains = ["rsmus.com", "mcgladrey.rsm.net"];
+      var allowedDomains = ["rsmus.com", "mcgladrey.rsm.net", "junctionsolutions.com"];
       var email = account.username.toLowerCase();
       if (!allowedDomains.some(function(d) { return email.endsWith(d); })) {
         document.getElementById("auth-status").textContent = "Access denied — RSM accounts only";
