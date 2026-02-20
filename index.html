@@ -710,6 +710,14 @@
 
   </div><!-- /app-content -->
 
+  <!-- ═══ LOADING STATE ═══ -->
+  <div id="auth-loading" style="position:fixed;inset:0;z-index:9999;background:#08090A;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem">
+    <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#3B82F6,#8B5CF6);display:flex;align-items:center;justify-content:center;color:white">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+    </div>
+    <p id="auth-status" style="font-family:'DM Sans',sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.4)">Authenticating...</p>
+  </div>
+
   <!-- ═══ MSAL AUTHENTICATION ═══ -->
   <script>
     const msalConfig = {
@@ -717,28 +725,38 @@
         clientId: "98e10bd4-9102-4dbf-abde-31f664aed685",
         authority: "https://login.microsoftonline.com/6e3824e5-c612-4b74-9a24-a9b1aa2c26d7",
         redirectUri: window.location.origin + window.location.pathname,
+      },
+      cache: {
+        cacheLocation: "sessionStorage",
       }
     };
 
     const msalInstance = new msal.PublicClientApplication(msalConfig);
 
     async function handleAuth() {
-      const response = await msalInstance.handleRedirectPromise();
-      if (response) {
-        showContent(response.account);
-      } else {
-        const accounts = msalInstance.getAllAccounts();
-        if (accounts.length > 0) {
-          showContent(accounts[0]);
+      try {
+        await msalInstance.initialize();
+        const response = await msalInstance.handleRedirectPromise();
+        if (response) {
+          showContent(response.account);
         } else {
-          msalInstance.loginRedirect({ scopes: ["User.Read"] });
+          const accounts = msalInstance.getAllAccounts();
+          if (accounts.length > 0) {
+            showContent(accounts[0]);
+          } else {
+            document.getElementById("auth-status").textContent = "Redirecting to login...";
+            msalInstance.loginRedirect({ scopes: ["User.Read"] });
+          }
         }
+      } catch (err) {
+        console.error("MSAL error:", err);
+        document.getElementById("auth-status").textContent = "Auth error: " + err.message;
       }
     }
 
     function showContent(account) {
+      document.getElementById("auth-loading").style.display = "none";
       document.getElementById("app-content").style.display = "block";
-      // Load main script after content is visible so canvas/SVGs get proper dimensions
       var s = document.createElement("script");
       s.src = "script.js";
       document.body.appendChild(s);
