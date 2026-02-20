@@ -738,6 +738,10 @@
 
     function showContent(account) {
       document.getElementById("app-content").style.display = "block";
+      // Load main script after content is visible so canvas/SVGs get proper dimensions
+      var s = document.createElement("script");
+      s.src = "script.js";
+      document.body.appendChild(s);
     }
 
     function signOut() {
@@ -746,6 +750,6 @@
 
     handleAuth();
   </script>
-  <script src="script.js"></script>
+
 </body>
 </html>
